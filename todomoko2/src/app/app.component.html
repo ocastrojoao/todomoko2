@@ -1,6 +1,6 @@
 <div class="flex flex-col justify-center items-center h-screen bg-blue-800">
 
-  <section class="p-6 max-w-sm bg-white rounded-xl shadow-lg space-x-4 flex-col">
+  <section class="p-6 max-w-sm max-h-[70vh] bg-white rounded-xl shadow-lg space-x-4 flex-col overflow-y-auto">
 
 
     <label for="New">+</label> <input
@@ -9,7 +9,7 @@
     name="New"
     placeholder="New Task"
     [(ngModel)]="taskText"
-    class="bg-gray-200 py-2 border border-gray-300 rounded-lg"
+    class="bg-gray-200 py-2 border border-gray-300 rounded-lg mb-2"
     (keyup.enter)="saveTask()"
   />
     <button class="bg-amber-700 hover:bg-amber-900 text-white font-bold py-2 px-4 rounded" (click)="saveTask()">
@@ -20,7 +20,7 @@
       please enter a task before saving.
     </div>
 
-    <div *ngFor="let task of uncompletedTasks">
+    <div *ngFor="let task of uncompletedTasks" class="mb-2">
       <div>
         <input type="checkbox" [(ngModel)]="task.completed" class="mr-2"/>
         {{ task.text }}
