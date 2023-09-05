@@ -8,6 +8,7 @@ import {Component} from '@angular/core';
 export class AppComponent {
   taskText: string = '';
   tasks: { text: string, completed: boolean }[] = [];
+  showError: boolean = false;
 
   get completedTasks() {
     return this.tasks.filter(task => task.completed);
@@ -19,11 +20,12 @@ export class AppComponent {
 
   saveTask(): void {
     if (!this.taskText) {
-      console.log('no task to save');
+      this.showError = true;
       return;
     }
     this.tasks.push({text: this.taskText, completed: false});
     this.taskText = '';
+    this.showError = false;
   }
 }
 
