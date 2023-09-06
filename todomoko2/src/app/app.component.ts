@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Task} from "./interfaces/task.interface";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   taskText: string = '';
-  tasks: { text: string, completed: boolean }[] = [];
+  tasks: Task[] = [];
   showError: boolean = false;
 
   get completedTasks() {
