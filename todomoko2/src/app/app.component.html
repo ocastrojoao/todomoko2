@@ -15,17 +15,18 @@
       Submit
     </button>
 
+
     <div *ngIf="showError" class="text-red-500 text-sm mt-2">
       please enter a task before saving.
     </div>
 
     <div *ngFor="let task of uncompletedTasks" class="mb-2">
-      <div>
+      <div class="flex items-center"> <!-- Container para a tarefa e o botão -->
         <input type="checkbox" [(ngModel)]="task.completed" class="mr-2"/>
         {{ task.text }}
+       
       </div>
     </div>
-
 
     <div *ngFor="let task of completedTasks">
       <div class="line-through text-gray-500">
